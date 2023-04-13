@@ -54,7 +54,7 @@ const helpers = {
         )
     },
     // serverDomain: 'http://localhost:3030/api',
-    serverDomain: "https://mattex.onrender.com/api/",
+    serverDomain: "https://mattex.onrender.com/api",
     // serverDomain: 'https://order-backend.kz/api/',
     localStorageKeys: {
         user: 'user',
