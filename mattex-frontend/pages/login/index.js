@@ -146,7 +146,7 @@ export default function Login(){
                 </p>
             </div> */}
 
-                <div>MATTEX</div>
+                
                 <div className={styles.row + " " + styles.align_items_center + " " + styles.justify_content_center}>
                     <div className={styles.col_md_6}>
                         
