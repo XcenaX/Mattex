@@ -43,7 +43,7 @@ export default function Home() {
     return (
         <div>
             <Head>
-                <title>Mattex</title>
+                
                 <link rel="icon" href="/" />
             </Head>
 
