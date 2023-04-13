@@ -49,6 +49,7 @@ export default function AdminPage(){
     const [mattressCases, setMattressCases] = useState([])
     const [mattressBases, setMattressBases] = useState([])
     const [mattressLayers, setMattressLayers] = useState([]);
+    const [mattresses, setMattresses] = useState([]);
 
     const [orders, setOrders] = useState([]);
     const [users, setUsers] = useState([]);
@@ -88,6 +89,13 @@ export default function AdminPage(){
         }).catch(() => {
             alert('Что-то пошло нетак при загрузке основ!');
         })
+
+        axios.get(helpers.serverDomain + '/mattresses/catalogMatresses').
+        then(res => {
+            setMattresses(res.data);
+        }).catch(() => {
+            alert('Что-то пошло нетак при загрузке слоев!');
+        });
     }
 
     const openConstructorModal = () => {
@@ -170,7 +178,7 @@ export default function AdminPage(){
                 
                 <MattressLayersTable admin={true} layers={mattressLayers } setShowModal={openLayerAdd}/>
 
-                <MattressTable admin={true} layers={mattressLayers } setShowModal={openMattressAdd}/>
+                <MattressTable admin={true} matresses={mattresses } setShowModal={openMattressAdd}/>
             </div>
         </div>
     );
