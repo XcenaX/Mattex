@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../campus_backend/.idea/campus_backend.iml" filepath="$PROJECT_DIR$/../../campus_backend/.idea/campus_backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../oilan/goco-backend/.idea/goco-backend.iml" filepath="$PROJECT_DIR$/../../oilan/goco-backend/.idea/goco-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/mattex-backend.iml" filepath="$PROJECT_DIR$/.idea/mattex-backend.iml" />
+    </modules>
+  </component>
+</project>
