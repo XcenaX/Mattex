@@ -16,6 +16,7 @@ import ModalWindow from "../src/components/ModalWindow";
 import {CSSTransition} from "react-transition-group";
 import modalStyles from '../src/components/ModalWindow/ModalWindow.module.css'
 import ConstructorBody from "../src/components/ModalBodies/ConstructorBody";
+import LoginBody from "../src/components/ModalBodies/LoginBody";
 import helpers from "../src/helpers";
 
 export default function Home() {
@@ -26,9 +27,15 @@ export default function Home() {
     const [mattresses, setMattresses] = useState([]);
 
     const openConstructorModal = () => {
-        setModalBody(<ConstructorBody/>)
-        setModalTitle('Конструктор матрасов')
-        setShowModal(!showModal)
+        setModalBody(<ConstructorBody/>);
+        setModalTitle('Конструктор матрасов');
+        setShowModal(!showModal);
+    }
+
+    const openLoginModal = () => {
+        setModalBody(<LoginBody/>);
+        setModalTitle('Авторизация');
+        setShowModal(!showModal);
     }
 
     const loadMattresses = () => {
@@ -56,7 +63,7 @@ export default function Home() {
                 <ModalWindow body={modalBody} setShowModal={setShowModal} title={modalTitle}/>
             </CSSTransition>
 
-            <Header openConstructorModal={openConstructorModal}/>
+            <Header openConstructorModal={openConstructorModal} openLoginModal={openLoginModal}/>
             <AboutCompany/>
             <StatsBlock/>
             <div className={styles.container}>

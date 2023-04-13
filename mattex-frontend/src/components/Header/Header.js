@@ -61,14 +61,15 @@ function Header (props) {
                     {/*    <img src="/geo-white.png" alt="" className={styles.buttonImage}/>*/}
                     {/*</div>*/}
 
-                    <Link href={accountLink.href}>
+                    
                         <span
                             className={styles.menuItem}
                             style={{
                                 fontWeight: 700
                             }}
+                            onClick={() => props.openLoginModal()}
                         >{accountLink.text}</span>
-                    </Link>
+                    
 
                     <Link href={'/cart'}>
                         <div className={styles.buttonItem}>
@@ -80,14 +81,20 @@ function Header (props) {
                     </Link>
 
                     {loggedIn && (
-                        <Link href={'/login'}>
-                            <div className={styles.buttonItem}>
-                                <img
-                                    src="/door.png"
-                                    className={styles.buttonImage}
-                                />
-                            </div>
-                        </Link>
+                        // <Link href={'/login'}>
+                        //     <div className={styles.buttonItem}>
+                        //         <img
+                        //             src="/door.png"
+                        //             className={styles.buttonImage}
+                        //         />
+                        //     </div>
+                        // </Link>
+                        <div className={styles.buttonItem}>
+                            <img
+                                src="/door.png"
+                                className={styles.buttonImage}
+                            />
+                        </div>
                     )}
                 </div>
             </div>

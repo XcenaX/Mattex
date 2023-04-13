@@ -24,11 +24,7 @@ export default function Login(){
 
     const [messageForUser, setMessageForUser] = useState('');
 
-    const openConstructorModal = () => {
-        setModalBody(<ConstructorBody/>)
-        setModalTitle('Конструктор матрасов')
-        setShowModal(!showModal)
-    }
+   
 
     const loginButtonPressed = () => {
         axios.post(helpers.serverDomain + '/users/login', {
