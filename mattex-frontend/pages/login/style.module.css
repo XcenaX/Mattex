@@ -32,7 +32,8 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("../../public/mattress-making.jpg");
+    background-image: url("../../public/background.jpg");
+    background-blend-mode: color-dodge;
     background-size: cover;
     background-repeat: no-repeat;
 }
