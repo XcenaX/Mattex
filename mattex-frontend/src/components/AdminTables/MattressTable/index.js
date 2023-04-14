@@ -28,14 +28,13 @@ export default function MattressTable(props){
                             <th>Жесткость</th>
                             <th>Цена(KZT)</th>                            
                             <th>Изображение</th>
-                            <th></th>
-                            <th></th>    
+                            <th></th>                            
                             </tr>
                         </thead>
                         <tbody>
                             {props.matresses.length === 0 ? (
                                 <tr>
-                                    <td colSpan={5}>Нет данных</td>
+                                    <td colSpan={7}>Нет данных</td>
                                 </tr>
                                 ) : (                            
                                     props.matresses.map(item => (
@@ -46,7 +45,7 @@ export default function MattressTable(props){
                                             <td>{item.load}</td>
                                             <td>{item.price}</td>                                            
                                             <td><a href={item.imgSrc} target="_blank" width={'100%'}>Посмотреть</a></td>
-                                            <td className={styles.table_cell}><div onClick={() => deleteCase(item._id)} className={styles.delete_btn2}></div></td>
+                                            <td className={styles.table_cell}><div onClick={() => deleteCase(item._id)} className={styles2.delete_btn2}></div></td>
                                         </tr>
                                     ))
                                 )}

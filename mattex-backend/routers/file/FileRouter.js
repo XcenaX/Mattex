@@ -27,7 +27,10 @@ filesRouter.post(
         let targetPath =  targetPathWithoutExt + path.extname(req.file.originalname);
         let fileName = `${randomPostfix}${path.extname(req.file.originalname)}`;
         fs.rename(tempPath, targetPath, err => {
-            if (err) res.status(500).send(err);
+            if (err) {
+                console.log(err);
+                res.status(500).send(err);
+            }
             else{
                 res
                     .status(200)

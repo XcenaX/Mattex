@@ -3,7 +3,7 @@ import axios from "axios";
 import helpers from "../../../../helpers";
 import styles from "./style.module.css"
 
-export default function AddCatalogMattressBody(){
+export default function AddCatalogMattressBody(props){
     const [name, setName] = useState();
     const [cloth, setCloth] = useState();
     const [height, setHeight] = useState();

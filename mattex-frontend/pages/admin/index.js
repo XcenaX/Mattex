@@ -123,7 +123,7 @@ export default function AdminPage(){
     }
 
     const openMattressAdd = () => {
-        setModalBody(<AddCatalogMattressBody/>)
+        setModalBody(<AddCatalogMattressBody iscreate={true}/>)
         setModalTitle('Добавить матрас')
         setShowModal(!showModal)
     }
