@@ -23,7 +23,11 @@ filesRouter.post(
 
         let randomPostfix = (Math.floor(Math.random() * 1000000) + 1).toString();
 
-        let targetPathWithoutExt = path.join(`./uploads/${randomPostfix}`);
+        if (!fs.existsSync("../../../uploads")) {
+            fs.mkdirSync(dir);            
+        }
+
+        let targetPathWithoutExt = path.join(`../../../uploads/${randomPostfix}`);
         let targetPath =  targetPathWithoutExt + path.extname(req.file.originalname);
         let fileName = `${randomPostfix}${path.extname(req.file.originalname)}`;
         fs.rename(tempPath, targetPath, err => {
