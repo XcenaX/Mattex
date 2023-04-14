@@ -305,5 +305,5 @@
 }
 
 .modal_form .form_control{
-  width: auto;
+  width: -webkit-fill-available;
 }
