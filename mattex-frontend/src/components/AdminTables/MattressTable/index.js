@@ -5,6 +5,15 @@ import axios from "axios";
 import helpers from "../../../helpers";
 
 export default function MattressTable(props){    
+    const deleteMattress = (id) => {
+        axios.delete(helpers.serverDomain + '/mattresses/catalogMattresses/' + id)
+            .then(function (response) {
+                alert('Матрас удален успешно!');
+            })
+            .catch(function (error) {
+                alert('Что-то пошло не так!');
+            });
+    }
     return(
         <>
             <div className={styles.admin_block}>
@@ -32,20 +41,20 @@ export default function MattressTable(props){
                             </tr>
                         </thead>
                         <tbody>
-                            {props.matresses.length === 0 ? (
+                            {props.mattresses.length === 0 ? (
                                 <tr>
                                     <td colSpan={7}>Нет данных</td>
                                 </tr>
                                 ) : (                            
-                                    props.matresses.map(item => (
+                                    props.mattresses.map(item => (
                                         <tr key={item.id} className={styles.table_row}>
                                             <td>{item.name}</td>
                                             <td>{item.cloth}</td>
                                             <td>{item.height}</td>
                                             <td>{item.load}</td>
                                             <td>{item.price}</td>                                            
-                                            <td><a href={item.imgSrc} target="_blank" width={'100%'}>Посмотреть</a></td>
-                                            <td className={styles.table_cell}><div onClick={() => deleteCase(item._id)} className={styles2.delete_btn2}></div></td>
+                                            <td><a href={"https://mattex.onrender.com/api/uploads/"+item.image} target="_blank" width={'100%'}>Посмотреть</a></td>
+                                            <td className={styles.table_cell}><div onClick={() => deleteMattress(item._id)} className={styles.delete_btn2}></div></td>
                                         </tr>
                                     ))
                                 )}

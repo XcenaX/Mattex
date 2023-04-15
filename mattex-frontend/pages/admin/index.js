@@ -90,11 +90,11 @@ export default function AdminPage(){
             alert('Что-то пошло нетак при загрузке основ!');
         })
 
-        axios.get(helpers.serverDomain + '/mattresses/catalogMatresses').
+        axios.get(helpers.serverDomain + '/mattresses/catalogMattresses').
         then(res => {
             setMattresses(res.data);
         }).catch(() => {
-            alert('Что-то пошло нетак при загрузке слоев!');
+            alert('Что-то пошло нетак при загрузке матрасов!');
         });
     }
 
@@ -178,7 +178,7 @@ export default function AdminPage(){
                 
                 <MattressLayersTable admin={true} layers={mattressLayers } setShowModal={openLayerAdd}/>
 
-                <MattressTable admin={true} matresses={mattresses } setShowModal={openMattressAdd}/>
+                <MattressTable admin={true} mattresses={mattresses } setShowModal={openMattressAdd}/>
             </div>
         </div>
     );

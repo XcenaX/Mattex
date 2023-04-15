@@ -10,7 +10,7 @@ const upload = multer({
 
 filesRouter.get("/:filename", (req, res) => {
     let filename = req.params.filename;
-    res.sendFile(filename, {root: './uploads'});
+    res.sendFile(filename, {root: '../../../uploads'});
 });
 
 filesRouter.post(
@@ -24,7 +24,7 @@ filesRouter.post(
         let randomPostfix = (Math.floor(Math.random() * 1000000) + 1).toString();
 
         if (!fs.existsSync("../../../uploads")) {
-            fs.mkdirSync(dir);            
+            fs.mkdirSync("../../../uploads");            
         }
 
         let targetPathWithoutExt = path.join(`../../../uploads/${randomPostfix}`);
